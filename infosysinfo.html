@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0">
+    <title>Read more read less jquery easy way</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box
+        }
+        body{
+            background-color:#f5f7f9;
+            font-family: cursive;
+
+        }
+        img{
+            width:100%;
+            border-radius:8px;
+            margin-bottom: 10px;
+        }
+        .box{
+            width: 30%;
+            float: left;
+            margin: 50px 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius:8px;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.15);
+
+        }
+        .box h4{
+            margin-bottom:10px;
+        }
+        .box p{
+            font-size:15px;
+            line-height:28px;
+            height:90px;
+            overflow:hidden;
+        }
+        .box a{
+            display: inline-block;
+            color:#fff;
+            background-color:#2196f3;
+            text-decoration:none;
+            padding: 10px 15px;
+            border-radius:8px;
+            margin-top:15px;
+        }
+        .box a:hover{
+            box-shadow; 0 5px 5px rgba(0,0,0,0.2);
+        }
+        .box.showContent p{
+            height:auto;
+        }
+        .box.showContent a.readmore-btn{
+            background-color: red;
+        }
+    </style> 
+</head>
+<body>
+    
+    <div class="box">
+        <img src="https://cdn-ukwest.onetrust.com/logos/8d84415b-1b52-4bc4-8d5f-ca9a8eccaf8a/f7db8968-fc22-4620-92ac-dc05c5d2aa15/02460a41-565e-4cac-80a7-449bc8f77a72/logo-infosys.png" alt="">
+        <h4>Company</h4>
+         <p>Infosys Limited is an Indian multinational information technology company that provides business consulting, information technology and outsourcing services. The company was founded in Pune and is headquartered in Bangalore. Infosys is the second-largest Indian IT company, after Tata Consultancy Services, by 2020 revenue figures, and the 602nd largest public company in the world, according to the Forbes Global 2000 ranking. On 24 August 2021, Infosys became the fourth Indian company to reach $100 billion in market capitalization.</p>
+         <a href="javascript:void();" class="readmore-btn">Read More</a>   
+     </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+     <script>
+        $(".readmore-btn").on('click',function(){
+            $(this).parent().toggleClass("showContent");
+            //shorthand if-else statement
+            var replaceText = $(this).parent().hasClass("showContent")?"Read less":"Read More";
+            $(this).text(replaceText);
+        });
+     </script>
+ 
+</body>
+</html>
